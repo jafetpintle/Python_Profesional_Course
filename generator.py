@@ -1,10 +1,10 @@
 import time
 
-def fiboGen():
+def fiboGen(max : int) -> int:
     n1 = 1 
     n2 = 1
     counter = 0
-    while True:
+    while counter < max:
         if counter <= 1:
             counter +=1
             yield 1
@@ -15,7 +15,8 @@ def fiboGen():
             yield aux
 
 if __name__ == "__main__":
-    fibonacci = fiboGen()
+    max :int = int(input("Numbers of fibonacci susecion:"))
+    fibonacci = fiboGen(max)
     for element in fibonacci:
         print(element)
         time.sleep(0.6)
